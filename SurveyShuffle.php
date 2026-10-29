@@ -19,6 +19,8 @@ class SurveyShuffle extends \ExternalModules\AbstractExternalModule {
     {
         $configs = $this -> getProjectSetting('configs');
 
+        if (is_null($configs)) return;
+
         for ($i = 0; $i < count($configs); $i++){ // Loop over each new configuration
             //Retrieve module configuration settings
             $shuffle_event = $this -> getProjectSetting('shuffle-event')[$i];
